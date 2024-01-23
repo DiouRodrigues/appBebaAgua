@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "598348589467",
+    "project_id": "bebaaguadr",
+    "storage_bucket": "bebaaguadr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598348589467:android:a37555f714e70f5752193e",
+        "android_client_info": {
+          "package_name": "com.diourodrigues.bebaagua"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXtm9qwvWuUxy-fCFn-s7-sYoXVQ9iqBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

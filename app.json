@@ -15,9 +15,15 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier":"com.diourodrigues.bebaagua",
+      "buildNumber":"1",
+      "googleServicesFile": "./google-services.json",
       "supportsTablet": true
     },
     "android": {
+      "package":"com.diourodrigues.bebaagua",
+      "versionCode": 1,
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -25,6 +31,19 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/perf",
+      "@react-native-firebase/crashlytics",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ]
   }
 }

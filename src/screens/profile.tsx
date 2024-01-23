@@ -1,7 +1,8 @@
-import { Box,Text,Avatar,Slider, Divider, Button} from 'native-base';
+import { Box,Text,Avatar,Slider, Divider, Button,Input} from 'native-base';
 import React, { useContext,useEffect,useState } from "react";
 import { SafeAreaView } from "react-native";
 import { UserContext } from '../Contexts/UserContext';
+import { usePersistState } from '../routes/Hooks/usePersistState';
 
 
 interface ProfileScreenProps{
@@ -11,8 +12,8 @@ interface ProfileScreenProps{
 export const ProfileScreen: React.FC<ProfileScreenProps> =({
 
 }) => {
-    
-    const { goal, user ,getData , storeData} = useContext(UserContext);
+    const [goal2,setGoal2] = usePersistState(2,'@goal2')
+    const { goal, user ,setGoal,setUser} = useContext(UserContext);
 
     
 
@@ -27,6 +28,13 @@ export const ProfileScreen: React.FC<ProfileScreenProps> =({
         <Text fontSize="2xl" textAlign="center">
         {user?.name}
         </Text>
+        <Input defaultValue={user?.name}onChangeText={(value)=>{
+          setUser({
+            name: value,
+            photo: String(user?.photo),
+          });
+        }} placeholder="Default Input"  />
+        
         
         {/* <Text fontSize="2xl" textAlign="center">
         Goal:{local}
@@ -36,12 +44,20 @@ export const ProfileScreen: React.FC<ProfileScreenProps> =({
         <Box mx={20}>
             <Text fontSize="xl" textAlign="center" mt={4}>Meta de água</Text>
             <Text fontSize="xl" textAlign="center" mt={4}>{goal}ml</Text>
+
+            <Text fontSize="xl" textAlign="center" mt={4}>Goal2:{goal2}ml</Text>
+           <Button
+           onPress={()=>{
+            setGoal2(Number(goal2)+1);
+          }}>
+
+           add+1</Button>
         <Slider  
             defaultValue={goal}
             value={goal}
             minValue={0}
             maxValue={4000} 
-            onChange={(value) => storeData(value)}
+            onChange={(value) => setGoal(value)}
             step={50}
              >
         <Slider.Track>

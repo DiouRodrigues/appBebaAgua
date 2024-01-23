@@ -27,7 +27,7 @@ export const Dashboard: React.FC<IDashboardProps> = () => {
     }
     useEffect(()=>{
         if(water >= goal){
-            toast.show({
+            toast.show( {
                 description:"Voce atingiu a sua meta diaria  de agua parabens",
                 placement:"top",
         })
