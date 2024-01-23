@@ -1,20 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NativeBaseProvider } from 'native-base';
+
+import { Routes} from './src/routes/routes';
+import { UserProvider } from './src/Contexts/UserContext';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>ta on</Text>
+    <NativeBaseProvider>
+      <UserProvider>
       <StatusBar style="auto" />
-    </View>
+      <Routes/>
+      </UserProvider>
+    </NativeBaseProvider>
+    
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
